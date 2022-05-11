@@ -46,7 +46,7 @@ extension CartViewController {
 //MARK: - IBActions
 extension CartViewController {
   @IBAction func reset() {
-    ShoppingCart.sharedCart.chocolates = []
+    ShoppingCart.sharedCart.chocolates.accept([]) // chocolates를 초기화
     let _ = navigationController?.popViewController(animated: true)
   }
 }
