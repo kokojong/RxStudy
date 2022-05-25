@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
 //            .map { _ in
 //                return mainView.searchTF.text ?? ""
 //            }
-            .asObservable()
+//            .asObservable()
             .map {
                 [weak self] _ -> String in
                 guard let self = self else { return "aaa" }
@@ -137,15 +137,10 @@ class MainViewController: UIViewController {
                 
                 self.repoSubject.onNext(response.value ?? Repositories(totalCount: 1, incompleteResults: true, items: [Item(fullName: "검색결과", description: "가", stargazersCount: 0)]))
                 
-                self.mainView.tableView.reloadData()
-                
-                
-                
+//                self.mainView.tableView.reloadData() legacy
                 
             }
-        
-
-        
+          
     }
 
 }
